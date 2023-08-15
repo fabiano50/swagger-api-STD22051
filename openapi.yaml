@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Onboarding API
+  description:  STD22051
+  version: 1.2.0
+
+servers:
+  - url: https://STD22051.com
+tags:
+  - name: default
+paths:
+  /students:
+    get:
+      responses:
+        '200':
+          description: successful operation
+    post:
+      responses:
+        '200':
+          description: Successful operation
+  
+   
+components:
+  schemas:
+    200:
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+          example: 'Rakoto'
+        birthdate:
+          type: string
+          format: date
+          example: '2000-01-01'
+      
+    
