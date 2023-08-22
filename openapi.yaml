@@ -11,18 +11,90 @@ tags:
 paths:
   /students:
     get:
+      tags:
+        - students
+      summary : Show the student
       responses:
         '200':
           description: successful operation
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/Students'
     post:
+      tags:
+        - students
+      summary: Add a new students
+      requestBody:
+        description: Create a new student
+        content: 
+          application/json: 
+              schema: 
+                $ref: '#/components/schemas/Students'
+        required: true
+      responses:
+          '200':
+            description: Successful operation
+            content: 
+              application/json: 
+                schema: 
+                  $ref: '#/components/schemas/Students'
+    put:
+      tags:
+        - students
+      summary : edit the student
       responses:
         '200':
-          description: Successful operation
-  
-   
+          description: successful operation
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/Students'
+    delete:
+      tags:
+        - students
+      summary : delete the student
+      responses:
+        '200':
+          description: successful operation
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/Students'
+    
+  /teachers:
+    get:
+      tags:
+        - teachers
+      summary : Show the teacher
+      responses:
+        '200':
+          description: successful operation
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/Teachers'
+    post:
+      tags:
+        - teachers
+      summary: Add a new teacher
+      requestBody:
+        description: Create a new student
+        content: 
+          application/json: 
+              schema: 
+                $ref: '#/components/schemas/Teachers'
+        required: true
+      responses:
+          '200':
+            description: Successful operation
+            content: 
+              application/json: 
+                schema: 
+                  $ref: '#/components/schemas/Teachers'
 components:
   schemas:
-    200:
+    Students:
       properties:
         id:
           type: integer
@@ -30,10 +102,28 @@ components:
           example: 1
         name:
           type: string
-          example: 'Rakoto'
+          example: Rakoto
         birthdate:
           type: string
           format: date
-          example: '2000-01-01'
+          example: 2000-01-01
+    Teachers:
+      properties:
+        name:
+          type: string
+          example: Ramarozaka
+        last name: 
+          type: string
+          example: Toky
+        course name:
+          type: string
+          example: algorithmique
+        course code:
+          type: string
+          example: PROG1
+        course duration:
+          type: string
+          example: 2h
+        
       
     
